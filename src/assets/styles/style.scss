@@ -4,8 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
-  padding-bottom: 50px;
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 header {
@@ -13,15 +16,14 @@ header {
   height: 100px;
   background-color: #9C36D3;
   color: #ffffff;
+  margin-bottom: 30px;
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 50px;
   background-color: #000000;
+  margin-top: 30px;
 }
 
 .container {
@@ -57,6 +59,265 @@ footer {
 
         a {
           font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+h2 {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.page-posts {
+
+  .container-posts {
+    display: flex;
+    flex-wrap: wrap;
+
+    .post {
+      width: 31.3%;
+      margin: 0 1% 20px;
+      min-height: 100px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #000;
+      border-radius: 5px;
+      text-decoration: none;
+
+      h3 {
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #9C36D3;
+      }
+
+      p {
+        font-size: 14px;
+        color: #000000;
+      }
+    }
+  }
+}
+
+.page-post {
+
+  .current-post {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 30px 20px;
+    margin-bottom: 50px;
+
+    span {
+      display: block;
+      font-weight: bold;
+      font-size: 20px;
+      color: darkslategray;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      color: #9C36D3;
+      text-transform: uppercase;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+
+  .container-comments {
+
+    h2 {
+      margin-bottom: 30px;
+    }
+
+    .comment {
+      width: 100%;
+      padding: 20px 30px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      margin-bottom: 30px;
+
+      .comment-user {
+
+        span {
+          display: block;
+
+          span {
+            display: inline-block;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .comment-description {
+        padding: 30px 30px 10px;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 20px auto 0;
+  text-align: center;
+
+  .item-paginate {
+    border: 1px solid #000000;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px;
+    cursor: pointer;
+
+    &.active {
+      background: darkslategray;
+      color: #ffffff;
+      border: none;
+    }
+
+    &:first-child,
+    &:last-child {
+      width: auto;
+      padding: 0 10px;
+
+      &.disabled {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+.page-add-post {
+
+  form {
+    width: 600px;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin: auto;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+
+
+      label {
+        width: 70px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      textarea {
+        display: block;
+        width: 488px;
+        height: 70px;
+        padding: 5px 10px;
+        font-size: 17px;
+        resize: none;
+
+        &.add-post-body {
+          height: 150px;
+        }
+      }
+    }
+
+    button {
+      display: block;
+      margin: auto;
+      font-size: 18px;
+      padding: 5px 15px;
+      cursor: pointer;
+      border: 1px solid #000000;
+      border-radius: 5px;
+    }
+
+    .error {
+      display: block;
+      text-align: center;
+      padding: 10px 0;
+      color: red;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
+
+.page-all-users {
+
+  table {
+    width: 100%;
+
+    tr {
+
+      td, th {
+        padding: 5px 10px;
+
+        &.info {
+          text-align: center;
+          color: #fff;
+          width: 30px;
+          padding-left: 0;
+          padding-right: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.modal-window {
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .modal {
+      position: relative;
+      width: 500px;
+      height: 300px;
+      padding: 20px;
+      background-color: #ffffff;
+      cursor: auto;
+      overflow-y: auto;
+
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-size: 30px;
+        padding: 0;
+      }
+
+      .body-modal {
+
+        tr {
+          display: block;
+          padding: 10px;
+          border-bottom: 1px solid #000;
+
+          &:last-child {
+            border: none;
+          }
+
+          td {
+
+            &:first-child {
+              width: 150px;
+            }
+          }
         }
       }
     }

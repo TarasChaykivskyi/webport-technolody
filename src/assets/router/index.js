@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import PostList from '../../components/PostList/PostList'
-import Post from '../../components/PostList/Post/Post'
+import Post from '../../components/PostList/PostPage/Post'
 import PostCreate from '../../components/PostList/PostCreate/PostCreate'
 import AllUsers from "../../components/AllUsers/AllUsers";
 
