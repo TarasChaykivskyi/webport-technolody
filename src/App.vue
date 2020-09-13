@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <RouterView class="container" />
+    <RouterView class="container main-content" />
     <footer></footer>
   </div>
 </template>

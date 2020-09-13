@@ -5,7 +5,7 @@
             <h2> {{ post.title}}</h2>
             <p>{{ post.body }}</p>
         </div>
-        <div class="container-comments">
+        <div v-if="comments.length" class="container-comments">
             <h2>Comments</h2>
             <div class="comment" v-for="comment in comments" :key="comment.id">
                 <div class="comment-user">

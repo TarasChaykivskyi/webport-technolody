@@ -37,8 +37,14 @@ const store = new Vuex.Store({
                 state.loadData = false;
             }
         },
-        setCurrentPost(state, current) {
-            state.currentPost = current;
+        setCurrentPost(state, id) {
+            let currentPost = {};
+            state.posts.map(function (item) {
+                if(item.id === id) {
+                    currentPost = item;
+                }
+            })
+            state.currentPost = currentPost;
         },
         setPostComments(state, comments) {
             state.commentsPost = comments;
@@ -51,7 +57,6 @@ const store = new Vuex.Store({
         },
         addNewPost(state, post) {
             state.posts.push(post);
-            console.log(post)
         }
     },
     actions: {
@@ -64,12 +69,7 @@ const store = new Vuex.Store({
                 })
         },
         GET_CURRENT_POST({commit}, id) {
-            return axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
-                .then(response => {
-                    commit('setCurrentPost', response.data);
-                }).catch(error => {
-                    console.log(error);
-                })
+            commit('setCurrentPost', id);
         },
         GET_POST_COMMENTS({commit}, id) {
             return axios.get('https://jsonplaceholder.typicode.com/posts/' + id + '/comments')

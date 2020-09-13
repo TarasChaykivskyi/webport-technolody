@@ -18,14 +18,14 @@ const routes = [
         component: PostList
     },
     {
-        path: '/post/:id',
-        name: 'Post',
-        component: Post
-    },
-    {
         path: '/post/create',
         name: 'PostCreate',
         component: PostCreate
+    },
+    {
+        path: '/post/:id',
+        name: 'Post',
+        component: Post
     },
     {
         path: '/users',
