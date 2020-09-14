@@ -20,19 +20,25 @@
 <script>
     export default {
         name: "Pagination",
-        data() {
-            return {
-                perPage: 10,
-                pageNumber: 1,
-                pageRange: 2
-            }
-        },
         props: {
             posts: {
                 type: Array,
                 default() {
                     return []
                 }
+            },
+            perPage: {
+                type: Number,
+                default: 10
+            },
+            pageRange: {
+                type: Number,
+                default: 2
+            }
+        },
+        data() {
+            return {
+                pageNumber: 1
             }
         },
         computed: {
